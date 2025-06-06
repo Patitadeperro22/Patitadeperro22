@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Patita de Perro - Viajes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    .navbar {
+      background: rgba(141, 152, 162, 0.6);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar .logo {
+      font-size: 64px;
+      font-weight: bold;
+    }
+
+    .navbar nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    .navbar nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navbar nav a:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .trip-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 900px;
+    }
+
+    .trip {
+      margin-bottom: 40px;
+    }
+
+    .trip h3 {
+      margin-bottom: 5px;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      scroll-behavior: smooth;
+      padding: 10px 0;
+    }
+
+    .carousel img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: #25D366;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .whatsapp-button img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .logo-img {
+      width: 120px;
+      height: 100px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- WhatsApp -->
+  <a href="https://chat.whatsapp.com/DlzU4OinfcnLSSIjeBLSt9" class="whatsapp-button" target="_blank">
+    <img src="imagenes/agencia.svg" alt="WhatsApp" />
+  </a>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="imagenes/image (6).png" alt="logo" class="logo-img" />
+    <div class="logo">Patita de Perro</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="Destinos.html">Destinos</a>
+      <a href="quienes somos.html">Quiénes Somos</a>
+     
+    </nav>
+    <img src="imagenes/image (6).png" alt="logo" class="logo-img" />
+  </div>
+
+  <!-- Viajes -->
+  <div class="trip-container">
+    <!-- Repite esto 15 veces con lugares y fechas diferentes -->
+    <!-- Aquí mostramos 2 como ejemplo -->
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 París, Francia</h3>
+      <p>📅 Fecha: 10/03/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?paris,1" alt="paris1">
+        <img src="https://source.unsplash.com/300x200/?paris,2" alt="paris2">
+        <img src="https://source.unsplash.com/300x200/?paris,3" alt="paris3">
+        <img src="https://source.unsplash.com/300x200/?paris,4" alt="paris4">
+        <img src="https://source.unsplash.com/300x200/?paris,5" alt="paris5">
+        <img src="https://source.unsplash.com/300x200/?paris,6" alt="paris6">
+        <img src="https://source.unsplash.com/300x200/?paris,7" alt="paris7">
+        <img src="https://source.unsplash.com/300x200/?paris,8" alt="paris8">
+        <img src="https://source.unsplash.com/300x200/?paris,9" alt="paris9">
+        <img src="https://source.unsplash.com/300x200/?paris,10" alt="paris10">
+      </div>
+    </div>
+
+    <div class="trip">
+      <h3>📍 Tokio, Japón</h3>
+      <p>📅 Fecha: 25/04/2025</p>
+      <div class="carousel">
+        <img src="https://source.unsplash.com/300x200/?tokyo,1" alt="tokyo1">
+        <img src="https://source.unsplash.com/300x200/?tokyo,2" alt="tokyo2">
+        <img src="https://source.unsplash.com/300x200/?tokyo,3" alt="tokyo3">
+        <img src="https://source.unsplash.com/300x200/?tokyo,4" alt="tokyo4">
+        <img src="https://source.unsplash.com/300x200/?tokyo,5" alt="tokyo5">
+        <img src="https://source.unsplash.com/300x200/?tokyo,6" alt="tokyo6">
+        <img src="https://source.unsplash.com/300x200/?tokyo,7" alt="tokyo7">
+        <img src="https://source.unsplash.com/300x200/?tokyo,8" alt="tokyo8">
+        <img src="https://source.unsplash.com/300x200/?tokyo,9" alt="tokyo9">
+        <img src="https://source.unsplash.com/300x200/?tokyo,10" alt="tokyo10">
+      </div>
+    </div>
+
+    <!-- Puedes pedirme los otros 13 y los agrego con gusto -->
+  </div>
+
+</body>
+</html>

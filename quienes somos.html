@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Empresa Profesional</title>
+  <!-- Font Awesome v6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-8FoUCeUUEPq2wAklNgl2J+5SOf1zMbYbrz03a99bBdcS3MzA2Ay1sEtUJY0uNklgZHTOfk+xtfEUb1EjpHKblA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --color1: #6cdacf;
+      --color2: #1da798;
+      --color3: #0167d3;
+      --color4: #f3b806;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: var(--color1);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 4px solid var(--color2);
+    }
+
+    header img {
+      height: 100px; /* Más grande */
+      max-width: 45%;
+    }
+
+    nav {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a:first-child {
+      font-size: 40px;
+      color: var(--color3);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--color4);
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .video-container {
+      margin: 30px auto;
+      max-width: 800px;
+      border: 5px solid var(--color3);
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+
+    section {
+      margin: 40px auto;
+      max-width: 900px;
+      text-align: left;
+      padding: 20px;
+      background-color: #fff;
+      border-left: 10px solid var(--color4);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: var(--color3);
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: var(--color2);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      transition: transform 0.3s ease, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--color4);
+      transform: scale(1.2);
+    }
+
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #20ba5a;
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header img {
+        margin: 5px 0;
+        max-width: 80%;
+        height: auto;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px 10px;
+      }
+
+      section {
+        padding: 15px;
+      }
+
+      video {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado con logos y navegación -->
+  <header>
+    <img src="imagenes/image (5).png" alt="Logo Izquierdo">
+    <img src="imagenes/image (5).png" alt="Logo Derecho">
+    <nav>
+      <a href="index.html">Inicio</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Video -->
+    <div class="video-container" id="video">
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+    </div>
+
+    <!-- Sección: Política de Calidad -->
+    <section id="calidad">
+      <h2>Política de Calidad</h2>
+      <p>
+        Nos comprometemos a ofrecer servicios de alta calidad, garantizando la satisfacción de nuestros clientes mediante innovación, eficiencia y mejora continua en todos nuestros procesos.
+      </p>
+    </section>
+
+    <!-- Sección: Quiénes Somos -->
+    <section id="quienes">
+      <h2>¿Quiénes somos?</h2>
+      <p>
+        Somos una empresa líder en el mercado, formada por un equipo profesional apasionado por brindar soluciones creativas, sostenibles y centradas en el cliente.
+      </p>
+    </section>
+  </main>
+
+  <!-- Pie de página con redes sociales -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp con imagen -->
+  <a href="https://chat.whatsapp.com/DlzU4OinfcnLSSIjeBLSt9" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <img src="imagenes/agencia.svg" alt="WhatsApp" />
+  </a>
+
+</body>
+</html>

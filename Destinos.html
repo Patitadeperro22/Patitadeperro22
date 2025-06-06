@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agencia de Viajes</title>
+  <style>
+    :root {
+      --turquesa: #6cdacf;
+      --verde-mar: #1da798;
+      --azul-profundo: #0167d3;
+      --amarillo: #f3b806;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: var(--turquesa);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      height: 90px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      position: relative;
+      padding: 5px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--azul-profundo);
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0%;
+      height: 3px;
+      background-color: var(--amarillo);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .video-container {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--verde-mar);
+    }
+
+    .video-container h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .video-container iframe {
+      width: 90%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .destinos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .destino {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .destino:hover {
+      transform: scale(1.03);
+    }
+
+    .destino img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .contenido {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .contenido h3 {
+      color: var(--azul-profundo);
+      margin-bottom: 1rem;
+    }
+
+    .cotizar-btn {
+      background: var(--amarillo);
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .cotizar-btn:hover {
+      background: #e0a800;
+    }
+
+    footer {
+      background: var(--verde-mar);
+      text-align: center;
+      padding: 1rem;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    /* Estilo para el botón flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      border-radius: 50%;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1ebe57;
+    }
+
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="imagenes/image (5).png" alt="Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes somos.html">Quiénes Somos</a></li>
+        <li><a href="Experiencia.html">Experiencias</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="video-container">
+    <h2>Conoce la experiencia Travelium</h2>
+    <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" allowfullscreen></iframe>
+  </section>
+
+  <section class="destinos">
+    <!-- 10 destinos de ejemplo -->
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?beach" alt="Playa Paraíso">
+      <div class="contenido">
+        <h3>Playa Paraíso</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Playa%20Paraíso" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?mountain" alt="Montaña Nevada">
+      <div class="contenido">
+        <h3>Montaña Nevada</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Montaña%20Nevada" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?jungle" alt="Selva Mística">
+      <div class="contenido">
+        <h3>Selva Mística</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Selva%20Mística" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?desert" alt="Desierto Dorado">
+      <div class="contenido">
+        <h3>Desierto Dorado</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Desierto%20Dorado" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?city" alt="Ciudad Moderna">
+      <div class="contenido">
+        <h3>Ciudad Moderna</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Ciudad%20Moderna" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?forest" alt="Bosque Encantado">
+      <div class="contenido">
+        <h3>Bosque Encantado</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Bosque%20Encantado" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?waterfall" alt="Cascada Mágica">
+      <div class="contenido">
+        <h3>Cascada Mágica</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Cascada%20Mágica" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?island" alt="Isla Tropical">
+      <div class="contenido">
+        <h3>Isla Tropical</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Isla%20Tropical" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?lake" alt="Lago Espejo">
+      <div class="contenido">
+        <h3>Lago Espejo</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Lago%20Espejo" target="_blank">Cotizar</a>
+      </div>
+    </div>
+    <div class="destino">
+      <img src="https://source.unsplash.com/400x300/?cruise" alt="Crucero de Lujo">
+      <div class="contenido">
+        <h3>Crucero de Lujo</h3>
+        <a class="cotizar-btn" href="https://wa.me/5211234567890?text=Hola,%20quiero%20cotizar%20Crucero%20de%20Lujo" target="_blank">Cotizar</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy;  2025 Patita de Perro Agencia de Viajes Todos los derechos reservados.
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://chat.whatsapp.com/DlzU4OinfcnLSSIjeBLSt9" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+  </a>
+
+</body>
+</html>

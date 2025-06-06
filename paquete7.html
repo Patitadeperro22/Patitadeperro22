@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página del Lugar</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #004aad;
+      color: white;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .left img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .social {
+      margin-top: 20px;
+    }
+
+    .social a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #004aad;
+      font-size: 20px;
+    }
+
+    .social a:hover {
+      color: #007bff;
+    }
+
+    .price {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .map {
+      margin-top: 20px;
+    }
+
+    .right img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #1ebe5b;
+    }
+
+    .info-image {
+      margin-top: 20px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004aad;
+      color: white;
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><img src="imagenes/image (5).png" alt="Logo"></div>
+    <div><a href="index.html">Inicio</a></div>
+    <div><img src="imagenes/image (5).png" alt="Logo"></div>
+  </header>
+
+  <div class="container">
+    <div class="left">
+      <img src="imagenes/ajencia.webp" alt="Imagen del lugar">
+      <div class="social">
+        <a href="https://www.facebook.com/share/1AXNrb31rX/" target="_blank">📘 Facebook</a>
+        <a href="https://www.instagram.com/patitadeperroviajera?igsh=N2hibWN1bTB2bTZy" target="_blank">📸 Instagram</a>
+        <a href="https://chat.whatsapp.com/DlzU4OinfcnLSSIjeBLSt9" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="price">Precio: $1,999 MXN</div>
+      <div class="map">
+        <p>📍 Mapa del lugar</p>
+        <a href="https://chat.whatsapp.com/DlzU4OinfcnLSSIjeBLSt9" target="_blank" class="button">Cotizar por WhatsApp</a>
+        <img src="imagenes/image (8).png" alt="Imagen informativa del viaje" class="info-image">
+      </div>
+    </div>
+
+    <div class="right">
+      <img src="imagenes/image (7).png" alt="Promoción del viaje">
+    </div>
+  </div>
+
+  <footer>
+    Cotízalo fácil, rápido y directo desde WhatsApp 📱
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="HandheldFriendly" content="true">
+  <title>Patita de Perro - Agencia de Viajes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      min-height: 100vh;
+      color: #6cdacf;
+      scroll-behavior: smooth;
+      position: relative;
+      font-size: 1rem;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    /* Logo responsive */
+    .top-left-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+    }
+    .top-left-logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .top-left-logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #a9f134;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: all 0.3s;
+    }
+    .top-left-logo:hover img {
+      transform: scale(1.1) rotate(15deg);
+    }
+    .top-left-logo span {
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-left: 5px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    /* Header responsive */
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 15px 20px 15px 100px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 90;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Menú para desktop */
+    .menu-center {
+      display: flex;
+      gap: 15px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .menu-center a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      position: relative;
+      padding: 5px 8px;
+    }
+    
+    .menu-center a:hover {
+      color: #a9f134;
+    }
+    
+    /* Redes sociales */
+    .redes-right {
+      display: flex;
+      gap: 12px;
+      margin-left: auto;
+    }
+    
+    .redes-right a {
+      color: white;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+    
+    .redes-right a:hover {
+      color: #a9f134;
+      transform: scale(1.2);
+    }
+
+    /* Hero section responsive */
+    .hero {
+      height: auto;
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .hero-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      color: white;
+      z-index: 1;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    /* Search section responsive */
+    .search-section {
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .search-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .search-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      background: #a9f134;
+      color: #333;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .search-bar button:hover {
+      background: #8bcb2a;
+      transform: translateY(-2px);
+    }
+
+    /* Carrusel mejorado para móviles y desktop */
+    .carousel-section {
+      margin: 30px 0;
+      padding: 0 15px;
+    }
+    .carousel-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-title {
+      text-align: center;
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    
+    /* Contenedor del carrusel */
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    /* Slides del carrusel */
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease;
+      will-change: transform;
+    }
+    
+    /* Estilos para las imágenes del carrusel */
+    .carousel-slide img {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 300px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin: 0 10px;
+      transition: transform 0.3s;
+    }
+    
+    .carousel-slide img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Botones de navegación */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    
+    .carousel-btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    
+    .carousel-btn.prev {
+      left: 10px;
+    }
+    
+    .carousel-btn.next {
+      right: 10px;
+    }
+    
+    /* Indicadores/puntos */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      margin: 0 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .carousel-dot.active {
+      background: #a9f134;
+      transform: scale(1.2);
+    }
+
+    /* Benefits cards responsive */
+    .benefits-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 0 15px;
+    }
+    .benefit-card {
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(5px);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+    .benefit-card h3 {
+      color: #2c3e50;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .benefit-card h3 i {
+      color: #a9f134;
+      font-size: 1.3em;
+    }
+    .benefit-card p {
+      color: #555;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    /* Favoritos responsive */
+    .favoritos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 15px;
+      justify-items: center;
+    }
+
+    .favorito-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 220px;
+    }
+
+    .favorito-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .favorito-card .info {
+      font-weight: bold;
+      padding: 8px 0;
+      font-size: 0.95rem;
+    }
+
+    .favorito-card button {
+      margin: 5px;
+      padding: 6px 10px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .favorito-card button:hover {
+      background-color: #333;
+    }
+
+    /* Footer redes sociales */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 30px;
+      font-size: 0.85rem;
+    }
+    footer .redes-footer {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    footer .redes-footer a {
+      color: white;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    footer .redes-footer a:hover {
+      color: #a9f134;
+    }
+
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 200;
+    }
+    .whatsapp-float:hover {
+      background-color: #128c4a;
+    }
+
+    /* Sección Quiénes somos responsive */
+    .about-section {
+      max-width: 900px;
+      margin: 30px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .about-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    .about-section p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .about-section img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    /* Menú hamburguesa para móviles */
+    .hamburger {
+      display: none; /* Oculto por defecto */
+      cursor: pointer;
+      padding: 15px;
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 101;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+    
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 70%;
+      max-width: 300px;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 100;
+      flex-direction: column;
+      padding: 80px 20px 20px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      overflow-y: auto;
+    }
+    
+    .mobile-menu.active {
+      transform: translateX(0);
+      display: flex;
+    }
+    
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s;
+    }
+    
+    .mobile-menu a:hover {
+      color: #a9f134;
+      padding-left: 25px;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+
+    /* Media Queries mejoradas */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex; /* Mostrar solo en móviles */
+      }
+      
+      .menu-center {
+        display: none; /* Ocultar menú desktop */
+      }
+      
+      .redes-right {
+        display: none; /* Ocultar redes desktop */
+      }
+      
+      .mobile-menu .redes-right {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 20px;
+        padding: 15px;
+      }
+      
+      /* Asegurar que el header no tape el menú */
+      header {
+        padding-right: 70px;
+      }
+      
+      /* Ajustes para el logo en móviles */
+      .top-left-logo img {
+        width: 60px;
+        height: 60px;
+      }
+      
+      /* Ajustes para el hero en móviles */
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      /* Ajustes para el carrusel en móviles */
+      .carousel-slide img {
+        max-width: 85%;
+        margin: 0 7.5%;
+      }
+      
+      .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-left-logo img {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      
+      .carousel-slide img {
+        max-width: 80%;
+        margin: 0 10%;
+      }
+    }
+
+    /* Animación del menú hamburguesa */
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  </style>
+</head>
+<body>
+<!-- Botón hamburguesa para móviles -->
+  <button class="hamburger" id="hamburger" aria-label="Menú principal" aria-expanded="false" aria-controls="mobileMenu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+
+  <!-- Menú móvil -->
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="close-btn" id="closeBtn" aria-label="Cerrar menú">&times;</button>
+    <a href="#">Inicio</a>
+    <a href="destinos.html">Destinos</a>
+    <a href="experiencia.html">Experiencia</a>
+    <a href="quienes somos.html">Quienes somos</a>
+    <div class="redes-right">
+      <a href="https://www.facebook.com/share/1AXNrb31rX/" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/patitadeperroviajera?igsh=N2hibWN1bTB2bTZy" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="mailto:contacto@patitadeperro.com" aria-label="Correo electrónico">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Header con menú centrado y redes a la derecha -->
+  <header>
+    <div class="header-container">
+      <div class="menu-center">
+        <a href="#">Inicio</a>
+        <a href="destinos.html">Destinos</a>
+        <a href="experiencia.html">Experiencia</a>
+        <a href="quienes somos.html">Quienes somos</a>
+      </div>
+      
+      <div class="redes-right">
+        <a href="https://www.facebook.com/share/1AXNrb31rX/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/patitadeperroviajera?igsh=N2hibWN1bTB2bTZy" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="mailto:contacto@patitadeperro.com" aria-label="Correo electrónico">
+          <i class="fa fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero con búsqueda -->
+    <section
+      class="hero"
+      id="inicio"
+      aria-label="Sección principal de bienvenida"
+    >
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>¡Bienvenido a <br />Patita de Perro!</h1>
+        <p>La mejor agencia de viajes para tu próxima aventura.</p>
+
+        <section class="search-section" aria-label="Buscar destinos">
+          <div class="search-container">
+            <label
+              for="buscarDestino"
+              style="font-weight: bold; font-size: 1.1rem"
+              >Busca tu destino ideal:</label
+            >
+            <div class="search-bar">
+              <input
+                type="text"
+                id="buscarDestino"
+                placeholder="Ej. Cancún, CDMX, París..."
+                aria-label="Campo de búsqueda de destinos"
+              />
+              <button onclick="buscarDestino()" aria-label="Buscar destino">
+                Buscar
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Próximos viajes -->
+    <section aria-label="Próximos viajes" class="carousel-section">
+      <h2 class="carousel-title">Próximos Viajes</h2>
+      <div class="favoritos-grid">
+        <!-- 5 Horizontales -->
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="Nueva York" />
+          <div class="info">Nueva York</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="Paquete1.html"><button>Ver Paquete</button></a>
+        </div>
+
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="Barcelona" />
+          <div class="info">Barcelona</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="paquete2.html"><button>Ver Paquete</button></a>
+        </div>
+
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="Cancún" />
+          <div class="info">Cancún</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="paquete3.html"><button>Ver Paquete</button></a>
+        </div>
+
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="Tailandia" />
+          <div class="info">Tailandia</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="paquete4.html"><button>Ver Paquete</button></a>
+        </div>
+
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="París" />
+          <div class="info">París</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="paquete5.html"><button>Ver Paquete</button></a>
+        </div>
+
+        <!-- 5 Verticales -->
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="Machu Picchu" />
+          <div class="info">Machu Picchu</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="paquete6.html"><button>Ver Paquete</button></a>
+        </div>
+
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="Islandia" />
+          <div class="info">Islandia</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="paquete7.html"><button>Ver Paquete</button></a>
+        </div>
+
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="Noruega" />
+          <div class="info">Noruega</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="paquete8.html"><button>Ver Paquete</button></a>
+        </div>
+
+        <div class="favorito-card">
+          <img src="imagenes/Oferta.jpg" alt="Perú" />
+          <div class="info">Perú</div>
+          <a href="https://wa.me/5211234567890" target="_blank"><button>Contacto</button></a>
+          <a href="paquete9.html"><button>Ver Paquete</button></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrusel de imágenes mejorado -->
+    <section class="carousel-section" aria-label="Carrusel de imágenes de destinos y ofertas">
+      <h2 class="carousel-title">Ofertas y Destinos Destacados</h2>
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-slide" id="carousel-slide">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Playa paradisiaca">
+            <img src="https://images.unsplash.com/photo-1526779259212-b42d95a0415b?auto=format&fit=crop&w=400&q=80" alt="Ciudad moderna">
+            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=400&q=80" alt="Montañas nevadas">
+            <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=400&q=80" alt="Templo antiguo">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80" alt="Aventura en la selva">
+            <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=400&q=80" alt="Playas al atardecer">
+            <img src="https://images.unsplash.com/photo-1520275127723-4d72167692c8?auto=format&fit=crop&w=400&q=80" alt="Destino romántico">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Viaje cultural">
+          </div>
+          <button class="carousel-btn prev" aria-label="Imagen anterior">&#10094;</button>
+          <button class="carousel-btn next" aria-label="Siguiente imagen">&#10095;</button>
+        </div>
+        <div class="carousel-dots" id="carousel-dots"></div>
+      </div>
+    </section>
+    <!-- Beneficios de viajar con nosotros -->
+    <section class="benefits-grid" aria-label="Beneficios de viajar con Patita de Perro">
+      <div class="benefit-card">
+        <h3><i class="fa fa-dollar-sign"></i> Mejores precios</h3>
+        <p>
+          Conexiones directas con aerolíneas y hoteles, garantizando precios
+          competitivos y promociones exclusivas.
+        </p>
+      </div>
+      <div class="benefit-card">
+        <h3><i class="fa fa-shield-alt"></i> Reservas seguras</h3>
+        <p>
+          Tu información está protegida con nosotros, y tus reservas son
+          garantizadas con atención personalizada 24/7.
+        </p>
+      </div>
+      <div class="benefit-card">
+        <h3><i class="fa fa-plane-departure"></i> Viaja sin preocupaciones</h3>
+        <p>
+          Nos encargamos de todos los detalles para que tú solo disfrutes y
+          vivas experiencias inolvidables.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección Quiénes somos -->
+    <section id="quienes-nosotros" class="about-section">
+      <h2>Quiénes somos</h2>
+      <p>
+        Patita de Perro es una agencia de viajes dedicada a ofrecer experiencias
+        únicas y personalizadas a todos nuestros clientes. Contamos con más de 10
+        años de experiencia en el sector turístico, y un equipo apasionado por
+        crear viajes inolvidables.
+      </p>
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+        alt="Equipo Patita de Perro"
+      />
+    </section>
+  </main>
+
+  <!-- Footer con info y contacto -->
+  <footer aria-label="Pie de página con contacto e información">
+    <div>
+      <p>
+        Dirección: Av. Viajes 123, Ciudad Turística, País <br />
+        Teléfono: +52 55 1234 5678 <br />
+        Email: contacto@patitadeperro.com
+      </p>
+      <p>
+        Síguenos en:
+        <a href="https://www.facebook.com/share/p/1DHkAiT9dQ/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/patitadeperroviajera?igsh=N2hibWN1bTB2bTZy" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </p>
+      <p>&copy; 2025 Patita de Perro Agencia de Viajes Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/5211234567890?text=Hola,%20quiero%20más%20información%20sobre%20Patita%20de%20Perro"
+     target="_blank"
+     rel="noopener"
+     aria-label="WhatsApp"
+     class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Lista de destinos con sus URLs
+    const destinos = {
+      "cancun": "destinos/cancun.html",
+      "paris": "destinos/paris.html",
+      "cdmx": "destinos/cdmx.html",
+      "londres": "destinos/londres.html",
+      "roma": "destinos/roma.html",
+      "tokio": "destinos/tokio.html",
+      "nueva york": "destinos/nuevayork.html",
+      "barcelona": "destinos/barcelona.html",
+      "berlin": "destinos/berlin.html",
+      "amsterdam": "destinos/amsterdam.html",
+      "rio de janeiro": "destinos/rio.html",
+      "sidney": "destinos/sidney.html",
+      "dubai": "destinos/dubai.html",
+      "moscu": "destinos/moscu.html",
+      "bangkok": "destinos/bangkok.html",
+      "los angeles": "destinos/losangeles.html",
+      "miami": "destinos/miami.html",
+      "toronto": "destinos/toronto.html",
+      "santorini": "destinos/santorini.html",
+      "venecia": "destinos/venecia.html"
+    };
+
+    function buscarDestino() {
+      const input = document.getElementById('buscarDestino').value.trim().toLowerCase();
+      if (input === "") {
+        alert("Por favor ingrese un destino.");
+        return;
+      }
+      if (destinos[input]) {
+        window.location.href = destinos[input];
+      } else {
+        alert("Destino no encontrado, favor de comunicarse.");
+      }
+    }
+
+    // Carrusel interactivo mejorado
+    document.addEventListener('DOMContentLoaded', function() {
+      const slide = document.querySelector('.carousel-slide');
+      const images = document.querySelectorAll('.carousel-slide img');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+      const dotsContainer = document.getElementById('carousel-dots');
+      
+      let currentIndex = 0;
+      const slideCount = images.length;
+      let slideWidth = images[0].clientWidth;
+      let autoSlideInterval;
+      
+      // Crear puntos indicadores
+      function createDots() {
+        for (let i = 0; i < slideCount; i++) {
+          const dot = document.createElement('div');
+          dot.classList.add('carousel-dot');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsContainer.appendChild(dot);
+        }
+      }
+      
+      // Actualizar puntos activos
+      function updateDots() {
+        const dots = document.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+      
+      // Ir a slide específico
+      function goToSlide(index) {
+        currentIndex = (index + slideCount) % slideCount;
+        slide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        updateDots();
+      }
+      
+      // Slide anterior
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        slide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        updateDots();
+      }
+      
+      // Siguiente slide
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        slide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        updateDots();
+      }
+      
+      // Iniciar auto-desplazamiento
+      function startAutoSlide() {
+        if (window.innerWidth > 768) { // Solo en desktop
+          autoSlideInterval = setInterval(nextSlide, 3000);
+        }
+      }
+      
+      // Detener auto-desplazamiento
+      function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+      }
+      
+      // Actualizar dimensiones al cambiar tamaño de pantalla
+      function updateSlideWidth() {
+        slideWidth = images[0].clientWidth;
+        slide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        
+        // Reiniciar auto-slide si cambia de móvil a desktop o viceversa
+        stopAutoSlide();
+        startAutoSlide();
+      }
+      
+      // Event listeners
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide();
+      });
+      
+      // Inicializar
+      createDots();
+      startAutoSlide();
+      
+      // Pausar auto-desplazamiento al interactuar
+      slide.addEventListener('mouseenter', stopAutoSlide);
+      slide.addEventListener('mouseleave', startAutoSlide);
+      
+      // Actualizar en redimensionamiento
+      window.addEventListener('resize', updateSlideWidth);
+    });
+
+    // Menú móvil
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('closeBtn');
+
+    hamburger.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      this.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.setAttribute('aria-hidden', isExpanded);
+    });
+
+    closeBtn.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    // Cerrar menú al hacer clic fuera de él
+    document.addEventListener('click', function(event) {
+      const isClickInsideMenu = mobileMenu.contains(event.target);
+      const isClickOnHamburger = hamburger.contains(event.target);
+      
+      if (!isClickInsideMenu && !isClickOnHamburger && mobileMenu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Ajustar el logo según el tamaño de la pantalla
+    function adjustLogo() {
+      const logo = document.querySelector('.top-left-logo img');
+      if (window.innerWidth <= 480) {
+        logo.style.width = '50px';
+        logo.style.height = '50px';
+      } else if (window.innerWidth <= 768) {
+        logo.style.width = '60px';
+        logo.style.height = '60px';
+      } else if (window.innerWidth <= 1024) {
+        logo.style.width = '80px';
+        logo.style.height = '80px';
+      } else {
+        logo.style.width = '100px';
+        logo.style.height = '100px';
+      }
+    }
+
+    // Ejecutar al cargar y al redimensionar
+    window.addEventListener('load', adjustLogo);
+    window.addEventListener('resize', adjustLogo);
+  </script>
+</body>
+</html>
